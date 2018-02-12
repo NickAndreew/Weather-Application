@@ -4,21 +4,33 @@ var stats = {
     ]
 }
 
-
+$("#fiveDaysForecastId").hide();
+$("#userInputDivId").hide();
 
 $(document).ready(function () {
- 
     $("#fiveDaysForecastId").hide();
     $("#userInputDivId").hide();
-    $("#mainPageDivId").show();
+ 
+    $('#mainPageDivId')
+        .delay(800)
+        .queue(function (next) { 
+        $(this).show();
+        next(); 
+    });
     $("#currentPlaceWeatherId").on("click", function(){
         var city = "";
     //    getUsersCity();
         var locationURL;
         locationURL = "http://ip-api.com/json";
-        $("#mainPageDivId").hide();
-        $("#userInputDivId").show();
         
+        $('#mainPageDivId')
+            .delay(800)
+            .queue(function (next) { 
+            $("#mainPageDivId").hide();
+            $("#userInputDivId").show();
+            $(".fiveDaysDiv").show();
+            next(); 
+        });
         $.getJSON(locationURL, function(cityData){
             console.log(cityData.city);
             city = cityData.city;
@@ -99,10 +111,18 @@ $(document).ready(function () {
     });
 
 
-    $("#weatherInfo").hide();
+//    $("#weatherInfo").hide();
     $("#user-input").change(function (){
-        $("#mainPageDivId").hide();
-        $("#userInputDivId").show();
+
+        $('#mainPageDivId')
+            .delay(800)
+            .queue(function (next) { 
+            $("#mainPageDivId").hide();
+            $("#userInputDivId").show();
+            $(".fiveDaysDiv").show();
+            next(); 
+        });
+        
         var cityInput = document.getElementById("user-input").value;
         var url = "https://api.openweathermap.org/data/2.5/forecast?q="+cityInput+"&APPID=5477437c8f28aed38631196e71c8c976";
         $.getJSON(url, function(json){
@@ -179,8 +199,8 @@ $(document).ready(function () {
     
     $("#weatherInfo").hide();
     $("#user-input1").change(function (){
-        $("#mainPageDivId").hide();
-        $("#userInputDivId").show();
+        
+        
         var cityInput = document.getElementById("user-input1").value;
         var url = "https://api.openweathermap.org/data/2.5/forecast?q="+cityInput+"&APPID=5477437c8f28aed38631196e71c8c976";
         $.getJSON(url, function(json){
@@ -248,6 +268,14 @@ $(document).ready(function () {
         })
         .done(function(){
             console.log("Success!");
+            $('#mainPageDivId')
+                .delay(800)
+                .queue(function (next) { 
+                $("#mainPageDivId").hide();
+                $("#userInputDivId").show();
+                $(".fiveDaysDiv").show();
+                next(); 
+            });
         })
         .fail(function(){
             console.log("Failure!");
