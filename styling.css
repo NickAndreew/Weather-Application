@@ -3,13 +3,6 @@
     flex-direction: row;
 }
 
-/*
-.transparent {
-    background: #7f7f7f;
-    background: rgba(0, 0, 0, 0.5);
-}
-*/
-
 #currentPlaceWeatherId {
     display: block;
     margin-left: auto;
@@ -19,6 +12,19 @@
     background-image: url("location-pic.png");
     background-size: cover;
     cursor: pointer;
+}
+
+.btn {
+    height: 30px;
+}
+
+#user-input {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.btn.btn-default { 
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .mainPageText {
@@ -33,12 +39,13 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px; 
-    width: 95%;
+    width: 300px;
 }
+
 .container1 {
     display: block;
     position: absolute;
-    height: 900px;
+    height: 950px;
     width:100%;
     text-decoration-color: white;
     background-image: url("autumn-background.jpg");
@@ -84,6 +91,26 @@
     width: 20%;
     background: rgba(0, 0, 0, 0.5);
     text-decoration-color: black;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+}
+
+#userInputDivId {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+}
+
+#mainPageDivId {
+    height: 20px;
+    display: inline-block;
+    align-content: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
 }
 
 .inputCl {
@@ -97,6 +124,7 @@
 }
     
 .firstDiv {
+    width: 100%;
     display: flex;
     align-content: center;
     flex-direction: column;
@@ -106,6 +134,7 @@
     font-size: 15px;
     color: white;
     display: flex;
+    text-shadow: 2px 2px black;
     justify-content: center;
     font-family: 'Acme', sans-serif;
 }
@@ -136,10 +165,6 @@
     cursor: pointer;
 }
 
-.navbar-header {
-    padding-left: 8%;
-}
-
 #thumb {
     height: 250px;
     width: 250px;
@@ -161,4 +186,9 @@ input#user-input {
 .bottomTextCl {
     text-align: center;
     color: white;
+}
+
+.fiveDaysForecastId {
+    font-family: cursive;
+    color:black;
 }

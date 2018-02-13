@@ -5,7 +5,7 @@ var stats = {
 }
 
 $("#fiveDaysForecastId").hide();
-$("#userInputDivId").hide();
+$("#userInputDivId").show();
 
 $(document).ready(function () {
     $("#fiveDaysForecastId").hide();
@@ -26,7 +26,7 @@ $(document).ready(function () {
         $('#mainPageDivId')
             .delay(800)
             .queue(function (next) { 
-            $("#mainPageDivId").hide();
+            $("#mainPageDivId").hide()
             $("#userInputDivId").show();
             $(".fiveDaysDiv").show();
             next(); 
@@ -39,30 +39,36 @@ $(document).ready(function () {
             var url = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&APPID=5477437c8f28aed38631196e71c8c976";
 
             $.getJSON(url, function(json){
+                $("#1st").text(json.list[0].dt_txt.split("-")[1]+" - "+json.list[0].dt_txt.split("-")[2].split(" ")[0]);
+                $("#2nd").text(json.list[8].dt_txt.split("-")[1]+" - "+json.list[8].dt_txt.split("-")[2].split(" ")[0]);
+                $("#3rd").text(json.list[16].dt_txt.split("-")[1]+" - "+json.list[16].dt_txt.split("-")[2].split(" ")[0]);
+                $("#4th").text(json.list[24].dt_txt.split("-")[1]+" - "+json.list[24].dt_txt.split("-")[2].split(" ")[0]);
+                $("#5th").text(json.list[32].dt_txt.split("-")[1]+" - "+json.list[32].dt_txt.split("-")[2].split(" ")[0]);
+                
                 // button handlers
                 gettingJSON(0);
                 $("#1st").on('click', function() {
-                    gettingJSON(cityInput, 0);
+                    gettingJSON(0);
                 });
 
                 $("#2nd").on('click', function() {
-                    gettingJSON(1);
+                    gettingJSON(8);
                 });
 
                 $("#3rd").on('click', function() {
-                    gettingJSON(2);
+                    gettingJSON(16);
                 });
 
                 $("#4th").on('click', function() {
-                    gettingJSON(3);
+                    gettingJSON(24);
                 });
 
                 $("#5th").on('click', function() {
-                    gettingJSON(4);
+                    gettingJSON(32);
                 });
 
-                $("#weatherInfo").show();
-                $("#fiveDaysForecastId").show();
+                $("#weatherInfo").css("display", "block");
+                $("#fiveDaysForecastId").css("display", "block");
 
                 function gettingJSON(dayNumber){
 
@@ -99,6 +105,7 @@ $(document).ready(function () {
                     $("#weathId").html(json.list[dayNumber].weather[0].main+".");
                     $("#windId").html("Wind : "+json.list[dayNumber].wind.speed + " m/s.");
                     $("#titleId").html(json.city.name);
+                    
                 }
             })
             .done(function(){
@@ -126,6 +133,12 @@ $(document).ready(function () {
         var cityInput = document.getElementById("user-input").value;
         var url = "https://api.openweathermap.org/data/2.5/forecast?q="+cityInput+"&APPID=5477437c8f28aed38631196e71c8c976";
         $.getJSON(url, function(json){
+            $("#1st").text(json.list[0].dt_txt.split("-")[1]+" - "+json.list[0].dt_txt.split("-")[2].split(" ")[0]);
+            $("#2nd").text(json.list[8].dt_txt.split("-")[1]+" - "+json.list[8].dt_txt.split("-")[2].split(" ")[0]);
+            $("#3rd").text(json.list[16].dt_txt.split("-")[1]+" - "+json.list[16].dt_txt.split("-")[2].split(" ")[0]);
+            $("#4th").text(json.list[24].dt_txt.split("-")[1]+" - "+json.list[24].dt_txt.split("-")[2].split(" ")[0]);
+            $("#5th").text(json.list[32].dt_txt.split("-")[1]+" - "+json.list[32].dt_txt.split("-")[2].split(" ")[0]);
+            
             // button handlers
             gettingJSON(0);
             $("#1st").on('click', function() {
@@ -133,19 +146,19 @@ $(document).ready(function () {
             });
 
             $("#2nd").on('click', function() {
-                gettingJSON(1);
+                gettingJSON(8);
             });
 
             $("#3rd").on('click', function() {
-                gettingJSON(2);
+                gettingJSON(16);
             });
 
             $("#4th").on('click', function() {
-                gettingJSON(3);
+                gettingJSON(24);
             });
 
             $("#5th").on('click', function() {
-                gettingJSON(4);
+                gettingJSON(32);
             });
 
             $("#weatherInfo").show();
@@ -204,6 +217,13 @@ $(document).ready(function () {
         var cityInput = document.getElementById("user-input1").value;
         var url = "https://api.openweathermap.org/data/2.5/forecast?q="+cityInput+"&APPID=5477437c8f28aed38631196e71c8c976";
         $.getJSON(url, function(json){
+            
+            $("#1st").text(json.list[0].dt_txt.split("-")[1]+" - "+json.list[0].dt_txt.split("-")[2].split(" ")[0]);
+            $("#2nd").text(json.list[8].dt_txt.split("-")[1]+" - "+json.list[8].dt_txt.split("-")[2].split(" ")[0]);
+            $("#3rd").text(json.list[16].dt_txt.split("-")[1]+" - "+json.list[16].dt_txt.split("-")[2].split(" ")[0]);
+            $("#4th").text(json.list[24].dt_txt.split("-")[1]+" - "+json.list[24].dt_txt.split("-")[2].split(" ")[0]);
+            $("#5th").text(json.list[32].dt_txt.split("-")[1]+" - "+json.list[32].dt_txt.split("-")[2].split(" ")[0]);
+            
             // button handlers
             gettingJSON(0);
             $("#1st").on('click', function() {
@@ -211,19 +231,19 @@ $(document).ready(function () {
             });
 
             $("#2nd").on('click', function() {
-                gettingJSON(1);
+                gettingJSON(8);
             });
 
             $("#3rd").on('click', function() {
-                gettingJSON(2);
+                gettingJSON(16);
             });
 
             $("#4th").on('click', function() {
-                gettingJSON(3);
+                gettingJSON(24);
             });
 
             $("#5th").on('click', function() {
-                gettingJSON(4);
+                gettingJSON(32);
             });
 
             $("#weatherInfo").show();
@@ -273,7 +293,6 @@ $(document).ready(function () {
                 .queue(function (next) { 
                 $("#mainPageDivId").hide();
                 $("#userInputDivId").show();
-                $(".fiveDaysDiv").show();
                 next(); 
             });
         })
@@ -304,7 +323,7 @@ $(document).ready(function () {
         $("#weathId").html(style, "display:none");
         $("#windId").html(style, "display:none");
         var x = document.getElementById("citySelector").options[0];
-        $("#citySelector").select(x);
+        $("# citySelector").select(x);
     }
 
     function createSelector() {
