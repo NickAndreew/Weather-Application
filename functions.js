@@ -23,14 +23,9 @@ $(document).ready(function () {
         var locationURL;
         locationURL = "http://ip-api.com/json";
         
-        $('#mainPageDivId')
-            .delay(800)
-            .queue(function (next) { 
-            $("#mainPageDivId").hide()
-            $("#userInputDivId").show();
-            $(".fiveDaysDiv").show();
-            next(); 
-        });
+        $("#mainPageDivId").hide()
+        $("#userInputDivId").show();
+        $(".fiveDaysDiv").show();
         $.getJSON(locationURL, function(cityData){
             console.log(cityData.city);
             city = cityData.city;
@@ -121,14 +116,9 @@ $(document).ready(function () {
 //    $("#weatherInfo").hide();
     $("#user-input").change(function (){
 
-        $('#mainPageDivId')
-            .delay(800)
-            .queue(function (next) { 
-            $("#mainPageDivId").hide();
-            $("#userInputDivId").show();
-            $(".fiveDaysDiv").show();
-            next(); 
-        });
+        $("#mainPageDivId").hide();
+        $("#userInputDivId").show();
+        $(".fiveDaysDiv").show();
         
         var cityInput = document.getElementById("user-input").value;
         var url = "https://api.openweathermap.org/data/2.5/forecast?q="+cityInput+"&APPID=5477437c8f28aed38631196e71c8c976";
@@ -288,13 +278,8 @@ $(document).ready(function () {
         })
         .done(function(){
             console.log("Success!");
-            $('#mainPageDivId')
-                .delay(800)
-                .queue(function (next) { 
                 $("#mainPageDivId").hide();
                 $("#userInputDivId").show();
-                next(); 
-            });
         })
         .fail(function(){
             console.log("Failure!");

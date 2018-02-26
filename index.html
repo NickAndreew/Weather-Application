@@ -15,12 +15,6 @@
 </head>
 
 <body>
-    <!--
-    <nav>
-        <div class="navbar">
-        </div>
-    </nav>
--->
     <div class="container1" id="htmlCl">
         <nav>
             <div class="navbar navbar-inversed">
@@ -46,7 +40,7 @@
         <div class="container-fluid">
             <div class="firstDiv">
                 <div>
-                    <h3 class="titleCl" id="titleId">Weather forecast for anywhere in the world.</h3>
+                    <h3 class="titleCl" id="titleId">Weather</h3>
                 </div>
                 <div class="fiveDaysDiv">
                     <ul class="nav nav-tabs" id="fiveDaysForecastId">
@@ -82,19 +76,18 @@
 -->
     </div>
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAT0F4653FpADRCH1152vqctUZMJdgF364",
-    authDomain: "instant-weather-forecast.firebaseapp.com",
-    databaseURL: "https://instant-weather-forecast.firebaseio.com",
-    projectId: "instant-weather-forecast",
-    storageBucket: "instant-weather-forecast.appspot.com",
-    messagingSenderId: "504558475547"
-  };
-  firebase.initializeApp(config);
-</script>
-    <script src="forecast.js"></script>
-    <script src="./functions.js" type="text/javascript"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAT0F4653FpADRCH1152vqctUZMJdgF364",
+        authDomain: "instant-weather-forecast.firebaseapp.com",
+        databaseURL: "https://instant-weather-forecast.firebaseio.com",
+        projectId: "instant-weather-forecast",
+        storageBucket: "instant-weather-forecast.appspot.com",
+        messagingSenderId: "504558475547"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="functions.js" type="text/javascript"></script>
 </body>
 </html>
