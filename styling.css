@@ -7,6 +7,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50px;
     height: 200px;
     width: 200px;
     background-image: url("location-pic.png");
@@ -18,10 +19,6 @@
     height: 30px;
 }
 
-#user-input {
-    border-bottom-right-radius: 0px !important;
-    border-top-right-radius: 0px !important;
-}
 
 #citySearchId { 
     border-bottom-right-radius: 4px;
@@ -36,16 +33,11 @@
     height: 25px;
 }
 
-#user-input1 {
+#user-input {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px; 
-    width: 300px;
-}
-
-#user-input {
-    width: 150px;
-    float: right;
+    width: 230px;
 }
 
 a {
@@ -59,7 +51,6 @@ a {
     width: calc(100% - 3em);
     width:100%;
     text-decoration-color: white;
-/*    background-image: url("sky-clouds.jpg");*/
     background: url('/gifs/1.gif');
     background-repeat: no-repeat;
     text-decoration-color: black;
@@ -91,7 +82,7 @@ a {
  
 .titleCl {
     padding-top: 20px; 
-    padding-bottom: 20px; 
+    padding-bottom: 5px; 
     padding-left: 35px; 
     color:white; 
     font-family: 'Acme', sans-serif; 
@@ -163,7 +154,7 @@ a {
 }
 
 .thumbDiv {
-    padding-top: 10px;
+    padding-top: 30px;
     display: flex;
     position: relative;  
     justify-content: center;
